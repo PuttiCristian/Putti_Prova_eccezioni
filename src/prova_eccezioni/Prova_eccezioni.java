@@ -19,36 +19,14 @@ public class Prova_eccezioni {
     /**
      * @param args the command line arguments
      */
-        public static void usingInputStream(){
-		Scanner in = new Scanner(System.in); // lo scanner gestisce autonomamente le eccezioni
-		System.out.println("Digita un intero:");
-		
-		String line = in.next();
-		int intValue = Integer.parseInt(line);
-	    
-		System.out.println("Valore: " + intValue);
-		in.close();
-                
-              //  BufferedReader inr = new BufferedReader(new InputStreamReader(System.in)); // con BufferedReader si deve necessariamente controllare l'eccezione
-              //  int lineR = inr.read();    
-    }
-        
-        public static void usingBufferedReader(){
-            BufferedReader inR = new bufferedereader(new InputStreamReader(System.in));
-            
-            try{
-                int lineR = inR.read();
-                System.out.println("Valore inserito con BufferedReader: " + lineR);
-            } catch (IOException ex) {
-                Logger.getLogger(Prova_eccezioni.class.getName()).log(Level.SEVERE, null, ex);
-                System.err.println("errore in lettura");
-            }
-            try {
-                inR.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Prova_eccezioni.class.getName()).log(Level.SEVERE, null, ex);
-                System.err.println("errore in scrittura");
-            }
+
+        public static void main(String[] args) {
+            usingInputStream instance = new usingInputStream();
+
+            System.out.println("Esecuzione usingInputStream():");
+            instance.usingInputStream();
+
+            System.out.println("\nEsecuzione usingBufferedReader():");
+            instance.usingInputStream();
         }
-    
 }
